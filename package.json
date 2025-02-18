@@ -26,6 +26,7 @@
   "bugs": {
     "url": "https://github.com/DSHG17/kampekiOpinions/issues"
   },
+  "type":"module",
   "homepage": "https://github.com/DSHG17/eCommerce#readme",
   "dependencies": {
     "adoptionsystem": "file:",
