@@ -1,37 +1,42 @@
 import { Schema, model } from "mongoose";
 
-const userSchema = Schema({
-    name:{
+const userSchema = new Schema({
+    name: {
         type: String,
         required: [true, "Name is required"],
-        maxLenght: [25, "Surname cannot exceed 25 characters"]
+        maxLength: [25, "Surname cannot exceed 25 characters"]
     },
-    surname:{
+    surname: {
         type: String,
         required: [true, "Surname is required"],
-        maxLenght: [25, "Surname cannot exceed 25 characters"]
+        maxLength: [25, "Surname cannot exceed 25 characters"]
     },
-    username:{
+    username: {
         type: String,
         required: true,
         unique: true
     },
-    email:{
+    email: {
         type: String,
         required: [true, "Email is required"],
         unique: true,
     },
-    password:{
+    password: {
         type: String,
         required: [true, "Password is required"]
     },
-    profilePicture:{
+    profilePicture: {
         type: String
     },
-    status:{
+    status: {
         type: Boolean,
         default: true
     }
-})
+}, {
+    versionKey: false,   
+    timestamps: true    
+});
 
-export default model("User", userSchema)
+export default model("User", userSchema);
+
+
