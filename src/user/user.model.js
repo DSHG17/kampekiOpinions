@@ -27,10 +27,6 @@ const userSchema = new Schema({
     },
     profilePicture: {
         type: String
-    },
-    status: {
-        type: Boolean,
-        default: true
     }
 }, {
     versionKey: false,   
