@@ -1,4 +1,4 @@
-import { body, param } from "express-validator";
+import { body } from "express-validator";
 import { emailExists, usernameExists } from "../helpers/db-validators.js";
 import { handleErrors } from "./handle-errors.js";
 import { validateFields } from "./validate-fields.js";
@@ -43,6 +43,13 @@ export const updatePasswordValidator = [
         minNumbers: 1,
         minSymbols: 1
     }),
+    validateFields,
+    handleErrors
+]
+
+export const updateUsernameValidator = [
+    validateJWT,
+    body("newUsername").custom(usernameExists),
     validateFields,
     handleErrors
 ]

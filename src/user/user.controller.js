@@ -9,6 +9,7 @@ export const defaultUser = async () => {
         "username": "admin",
         "email": "dshgonzalez11@gmail.com",
         "password": "Samedirection14*",
+        "role": "ADMIN_ROLE"
     }
     const firstUser = await User.findOne({
         $or: [
@@ -61,6 +62,34 @@ export const updatePassword = async (req, res) => {
         return res.status(500).json({
             success: false,
             message: "Error al actualizar contraseña",
+            error: err.message
+        })
+    }
+}
+
+export const updateUsername = async (req,res) =>{
+    try{
+        const tokenUser = req.usuario.id
+        const {newUsername} = req.body
+
+        const user = await User.findById(tokenUser)
+
+        if(newUsername == user.username){
+            return res.status(400).json({
+                success: false,
+                message: "El nuevo nombre de usuario no tiene que ser igual al actual"
+            })
+        }
+
+        await User.findByIdAndUpdate(tokenUser, {username:newUsername},{new: true})
+        return res.status(200).json({
+            success: true,
+            message: "Nombre de usuario actualizado",
+        })
+    }catch(err){
+        return res.status(500).json({
+            success: false,
+            message: "Error al actualizar el nombre de usuario",
             error: err.message
         })
     }

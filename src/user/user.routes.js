@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { updatePasswordValidator } from "../middlewares/user-validators.js";
-import { updatePassword } from "./user.controller.js";
+import { updatePasswordValidator, updateUsernameValidator } from "../middlewares/user-validators.js";
+import { updatePassword, updateUsername } from "./user.controller.js";
 
 const router = Router()
 
@@ -8,7 +8,7 @@ const router = Router()
  * @swagger
  * /updatePassword:
  *   patch:
- *     summary: Actualiza la sesion de un usuario
+ *     summary: Actualiza la contraseña del usuario
  *     tags: [User]
  *     requestBody:
  *       required: true
@@ -31,6 +31,32 @@ const router = Router()
 router.patch("/updatePassword",
     updatePasswordValidator,
     updatePassword
+)
+
+/**
+ * @swagger
+ * /updateUsername:
+ *   patch:
+ *     summary: Actualiza el nombre de usuario
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *               newUsername:
+ *                 type: string
+ *
+ *     responses:
+ *       200:
+ *         description: Nombre de usuario actualizado
+ *       400:
+ *         description: El nuevo nombre de usuario no tiene que ser igual al actual
+ *       500:
+ *         description: Error al actualizar el nombre de usuario
+ */
+
+router.patch("/updateUsername",
+    updateUsernameValidator,
+    updateUsername
 )
 
 export default router
