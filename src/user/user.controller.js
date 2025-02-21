@@ -95,3 +95,40 @@ export const updateUsername = async (req,res) =>{
     }
 }
 
+export const updateProfilePicture = async (req,res) =>{
+    try {
+        const tokenUser = req.usuario.id;
+        
+        let newProfilePicture = req.file ? req.file.filename : null;
+
+        if (!newProfilePicture) {
+            return res.status(400).json({
+                success: false,
+                msg: 'No se proporcionó una nueva foto de perfil',
+            });
+        }
+
+        const user = await User.findById(tokenUser);
+
+        if (user.profilePicture) {
+            const oldProfilePicturePath = join(__dirname, "../../public/uploads/profile-pictures", user.profilePicture);
+            await fs.unlink(oldProfilePicturePath);
+        }
+
+        user.profilePicture = newProfilePicture;
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            msg: 'Foto de perfil actualizada',
+            user,
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar la foto de perfil',
+            error: err.message
+        });
+    }
+}
+
