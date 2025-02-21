@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "67a7693b-5e39-4a0a-b345-9fd8c48f20d9",
+		"name": "kampekiOpinions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37585399"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "updateUsername",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTNlYzc3OTk1ZjNkYzMzN2I0YzIiLCJpYXQiOjE3NDAwMTg2NzUsImV4cCI6MTc0MDAyMjI3NX0.uGoL3xDTL6wY1ow-2A6Sy8fZ3kxoOinuUBxTU1S_n6k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newUsername\": \"elpapupro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/user/updateUsername",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"user",
+								"updateUsername"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfilePicture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTkyZDMxNDQzN2M2YThhMjk4MGEiLCJpYXQiOjE3NDAxMDg4MjMsImV4cCI6MTc0MDExMjQyM30.hAVdiMReQ2L4JJ1QT0jSNIqHGuJUKzOYD6a-JGf2BIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/dshgo/Desktop/rin.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/user/updateProfilePicture",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"user",
+								"updateProfilePicture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTkyZDMxNDQzN2M2YThhMjk4MGEiLCJpYXQiOjE3NDAxMDg4MjMsImV4cCI6MTc0MDExMjQyM30.hAVdiMReQ2L4JJ1QT0jSNIqHGuJUKzOYD6a-JGf2BIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"el waza waza\",\r\n    \"surname\": \"rodriguez\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTkyZDMxNDQzN2M2YThhMjk4MGEiLCJpYXQiOjE3NDAxMDg4MjMsImV4cCI6MTc0MDExMjQyM30.hAVdiMReQ2L4JJ1QT0jSNIqHGuJUKzOYD6a-JGf2BIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Samedirection14/\",\r\n    \"newPassword\": \"Samedirection14*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/user/updatePassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dshgonzalez14@gmail.com\",\r\n    \"password\": \"Samedirection14/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alejandro",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Florian",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Chinito",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Samedirection14*",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dshgonzalez14@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

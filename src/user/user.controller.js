@@ -1,5 +1,10 @@
 import { hash, verify } from "argon2";
 import User from "./user.model.js"
+import fs from "fs/promises"
+import { fileURLToPath } from "url"
+import { dirname, join } from "path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export const defaultUser = async () => {
 
@@ -132,3 +137,24 @@ export const updateProfilePicture = async (req,res) =>{
     }
 }
 
+export const updateUser = async (req,res) =>{
+    try{
+        const tokenUser = req.usuario.id
+        const data = req.body;
+
+        const updatedUser = await User.findByIdAndUpdate(tokenUser, data, { new: true });
+
+        res.status(200).json({
+            success: true,
+            msg: 'Usuario Actualizado',
+            user: updatedUser,
+        });
+
+    }catch(err){
+        return res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar el usuario',
+            error: err.message
+        })
+    }
+}

@@ -8,6 +8,7 @@ import { validateJWT } from "./validate-jwt.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("El nombre es requerido"),
+    body("surname").notEmpty().withMessage("El apellido es requerido"),
     body("username").notEmpty().withMessage("El username es requerido"),
     body("email").notEmpty().withMessage("El email es requerido"),
     body("email").isEmail().withMessage("No es un email válido"),
@@ -58,5 +59,13 @@ export const updateProfilePictureValidator = [
     validateJWT,
     validateFields,
     deleteFileOnError,
+    handleErrors
+]
+
+export const updateUser = [
+    validateJWT,
+    body("email").isEmail().withMessage("No es un email válido"),
+    body("email").custom(emailExists),
+    validateFields,
     handleErrors
 ]
