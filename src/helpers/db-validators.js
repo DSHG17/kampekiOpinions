@@ -28,3 +28,10 @@ export const nameCategoryExist = async (name= "") => {
         throw new Error(`El nombre ${name}, ya esta en uso para una categoria `)
     }
 }
+
+export const categoryExist = async (uid= "") => {
+    const exist = await Category.findById(uid)
+    if(!exist) {
+        throw new Error(`No existe la categoría con el ID: ${uid}`)
+    }
+}

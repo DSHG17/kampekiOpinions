@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { createCategory } from "./category.controller.js"
-import { createCategoryValidator } from "../middlewares/category-validators.js"
+import { createCategory, updateCategory } from "./category.controller.js"
+import { createCategoryValidator, updateCategoryValidator } from "../middlewares/category-validators.js"
 
 
 const router = Router() 
@@ -27,5 +27,34 @@ router.post(
     createCategoryValidator, 
     createCategory
 )
+
+/**
+ * @swagger
+ * /updateCategory:
+ *   put:
+ *     summary: Actualiza una categoria existente
+ *     tags: [Category]
+ *     requestParams:
+ *       required: true
+ *       content:
+ *               cid
+ *     requestBody:
+ *       required: true
+ *       content:
+ *               name:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Categoria actualizada exitosamente
+ *       500:
+ *         description: Error al actualizar la categoria
+ */
+router.put(
+    "/updateCategory/:cid",
+    updateCategoryValidator, 
+    updateCategory
+)
+
+
 
 export default router
