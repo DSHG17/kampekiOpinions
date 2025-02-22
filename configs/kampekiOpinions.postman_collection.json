@@ -281,6 +281,136 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTY4MThiZTMzNDJhY2U5MmE4YzEiLCJpYXQiOjE3NDAxOTQ5NjEsImV4cCI6MTc0MDE5ODU2MX0.O_Ccr3iSEoAZZp7QxkJS0qP6WBRwTUUSPRgMIRYk-TU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Opiniones\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/category/createCategory",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"category",
+								"createCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTY4MThiZTMzNDJhY2U5MmE4YzEiLCJpYXQiOjE3NDAxOTQ5NjEsImV4cCI6MTc0MDE5ODU2MX0.O_Ccr3iSEoAZZp7QxkJS0qP6WBRwTUUSPRgMIRYk-TU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"reclamos y criticas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/category/updateCategory/67b946ea2f93851de4e4ce59",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"category",
+								"updateCategory",
+								"67b946ea2f93851de4e4ce59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I2OTY4MThiZTMzNDJhY2U5MmE4YzEiLCJpYXQiOjE3NDAxOTQ5NjEsImV4cCI6MTc0MDE5ODU2MX0.O_Ccr3iSEoAZZp7QxkJS0qP6WBRwTUUSPRgMIRYk-TU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/kampekiOpinions/v1/category/deleteCategory/67b946ea2f93851de4e4ce59",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"kampekiOpinions",
+								"v1",
+								"category",
+								"deleteCategory",
+								"67b946ea2f93851de4e4ce59"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
